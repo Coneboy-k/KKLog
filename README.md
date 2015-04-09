@@ -45,6 +45,6 @@ OR  USE POD
     KKLogI(@"info");
     KKLogD(@"DDDD");...
     
-3.Have fan!
+3.Have fun!
  
  
