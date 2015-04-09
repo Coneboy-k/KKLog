@@ -14,7 +14,7 @@ Alternatively you can directly add the `KKLog.h`& `KKLog.m`  source files to you
 
 OR  USE POD
 
-`pod 'kkLog'`
+`pod 'KKLog'`
 
 ## Usage
 
