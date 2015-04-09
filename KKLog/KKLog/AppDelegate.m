@@ -2,21 +2,52 @@
 //  AppDelegate.m
 //  KKLog
 //
-//  Created by SunKe on 15/4/9.
+//  Created by JackSun on 15/4/9.
 //  Copyright (c) 2015年 Coneboy_K. All rights reserved.
 //
 
 #import "AppDelegate.h"
-
+#import "KKLog.h"
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
+/// 程序Crash后的处理函数
+void uncaughtExceptionHandler(NSException *exception)
+{
+    [KKLog logCrash:exception];
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    //注册程序 Crash后的处理函数
+    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+    //KKLog 初始化函数
+    [KKLog logIntial];
+    for (int i=0; i<10; i++) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^(void) {
+            
+            for (int i=0; i<100; i++) {
+                [KKLog logI:@"info"];
+                [KKLog logE:@"error"];
+                [KKLog logW:@"worring"];
+                
+                KKLogI(@"info");
+                KKLogD(@"DDDD");
+                
+                
+            }
+        });
+        
+    }
+
+    
+    
     return YES;
 }
 

@@ -2,7 +2,7 @@
 //  ViewController.h
 //  KKLog
 //
-//  Created by SunKe on 15/4/9.
+//  Created by JackSun on 15/4/9.
 //  Copyright (c) 2015年 Coneboy_K. All rights reserved.
 //
 

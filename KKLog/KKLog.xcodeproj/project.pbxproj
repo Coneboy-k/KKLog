@@ -14,6 +14,7 @@
 		E1CC671C1AD66E0A00DCBD75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1CC671B1AD66E0A00DCBD75 /* Images.xcassets */; };
 		E1CC671F1AD66E0A00DCBD75 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CC671D1AD66E0A00DCBD75 /* LaunchScreen.xib */; };
 		E1CC672B1AD66E0A00DCBD75 /* KKLogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CC672A1AD66E0A00DCBD75 /* KKLogTests.m */; };
+		E1CC67391AD6700F00DCBD75 /* KKLog.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CC67381AD6700F00DCBD75 /* KKLog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		E1CC67241AD66E0A00DCBD75 /* KKLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KKLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1CC67291AD66E0A00DCBD75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1CC672A1AD66E0A00DCBD75 /* KKLogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKLogTests.m; sourceTree = "<group>"; };
+		E1CC67371AD6700F00DCBD75 /* KKLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKLog.h; path = KKLog/KKLog.h; sourceTree = "<group>"; };
+		E1CC67381AD6700F00DCBD75 /* KKLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKLog.m; path = KKLog/KKLog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 		E1CC670D1AD66E0A00DCBD75 /* KKLog */ = {
 			isa = PBXGroup;
 			children = (
+				E1CC67371AD6700F00DCBD75 /* KKLog.h */,
+				E1CC67381AD6700F00DCBD75 /* KKLog.m */,
 				E1CC67121AD66E0A00DCBD75 /* AppDelegate.h */,
 				E1CC67131AD66E0A00DCBD75 /* AppDelegate.m */,
 				E1CC67151AD66E0A00DCBD75 /* ViewController.h */,
@@ -221,6 +226,7 @@
 			files = (
 				E1CC67171AD66E0A00DCBD75 /* ViewController.m in Sources */,
 				E1CC67141AD66E0A00DCBD75 /* AppDelegate.m in Sources */,
+				E1CC67391AD6700F00DCBD75 /* KKLog.m in Sources */,
 				E1CC67111AD66E0A00DCBD75 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +350,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KKLog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -354,6 +361,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KKLog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

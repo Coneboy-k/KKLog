@@ -7,10 +7,9 @@
 //
 
 #import "KKLog.h"
+#import <UIKit/UIKit.h>
 #include <sys/types.h>
 #include <sys/sysctl.h>
-#import <UIKit/UIKit.h>
-
 
 #ifdef DEBUG
 //Debug默认记录的日志等级为LOGLEVELD。
@@ -23,7 +22,8 @@ static KKLogLevel LogLevel = LOGLEVELI;
 static NSString *logFilePath = nil;
 static NSString *logDic      = nil;
 static NSString *crashDic    = nil;
-// 定义删除几天前的会议
+
+// 定义删除几天前的日志
 const int k_preDaysToDelLog = 3;
 
 // 打印队列
@@ -102,7 +102,7 @@ static dispatch_queue_t k_operationQueue;
         
         logFilePath = filePath;
 #if DEBUG
-        //        NSLog(@"LogPath: %@", logFilePath);
+        NSLog(@"LogPath: %@", logFilePath);
 #endif
         //create file if it doesn't exist
         if(![[NSFileManager defaultManager] fileExistsAtPath:filePath])
@@ -114,6 +114,7 @@ static dispatch_queue_t k_operationQueue;
         [components setHour:0];
         [components setMinute:0];
         [components setSecond:0];
+        
         //要删除三天以前的日志（0点开始）
         NSDate *delDate = [[NSCalendar currentCalendar] dateFromComponents:components];
         NSArray *logFiles = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:logDic error:nil];
@@ -190,8 +191,8 @@ static dispatch_queue_t k_operationQueue;
     // Internal error reporting
     if (!crashDic) {
         NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-        //        NSString *crashDirectory = [documentsDirectory stringByAppendingString:@"/crash/"];
-        NSString *crashDirectory = [documentsDirectory stringByAppendingString:@"/log/"];//lyp
+
+        NSString *crashDirectory = [documentsDirectory stringByAppendingString:@"/log/"];
         crashDic = crashDirectory;
     }
     
